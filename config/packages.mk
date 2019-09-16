@@ -9,3 +9,14 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     OctaviThemesStub \
     TurboPrebuilt
+
+# Custom Overlays
+# Settings
+PRODUCT_PACKAGES += \
+    SystemPitchBlackOverlay \
+    SystemDarkGrayOverlay \
+    SystemUIDarkGrayOverlay \
+    SystemStyleOverlay \
+    SystemUIStyleOverlay \
+    SystemNightOverlay \
+    SystemUINightOverlay
