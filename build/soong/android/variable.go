@@ -35,7 +35,7 @@ type Product_variables struct {
 	Device_support_legacy_hwfde struct {
 		Cflags []string
 	}
-	Device_support_wait_for_qsee struct {
+	Should_wait_for_qsee struct {
 		Cflags []string
 	}
 	Supports_extended_compress_format struct {
@@ -74,7 +74,7 @@ type ProductVariables struct {
 	Device_support_hwfde  *bool `json:",omitempty"`
 	Device_support_hwfde_perf  *bool `json:",omitempty"`
 	Device_support_legacy_hwfde  *bool `json:",omitempty"`
-	Device_support_wait_for_qsee  *bool `json:",omitempty"`
+	Should_wait_for_qsee  *bool `json:",omitempty"`
 	Java_Source_Overlays *string `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Qcom_um_soong_namespace  *string `json:",omitempty"`
