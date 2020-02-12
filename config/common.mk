@@ -109,6 +109,9 @@ include vendor/octavi/config/packages.mk
 # ThemeOverlays
 include packages/overlays/Themes/themes.mk
 
+# Inherit from audio config
+$(call inherit-product, vendor/octavi/config/audio.mk)
+
 # Branding
 include vendor/octavi/config/branding.mk
 
