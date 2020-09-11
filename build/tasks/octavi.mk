@@ -29,10 +29,12 @@ endif
 
 OCTAVI_TARGET_PACKAGE := $(PRODUCT_OUT)/$(OCTAVI_VERSION).zip
 
+MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+
 .PHONY: octavi
 octavi: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(OCTAVI_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(OCTAVI_TARGET_PACKAGE) > $(OCTAVI_TARGET_PACKAGE).md5sum
+	$(hide) $(MD5) $(OCTAVI_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(OCTAVI_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(OCTAVI_TARGET_PACKAGE)" >&2
 	echo -e ${CL_GRN}"    ____  _______________ _    ______   ____  _____       "${CL_RST}
 	echo -e ${CL_RED}"   / __ \/ ____/_  __/   | |  / /  _/  / __ \/ ___/       "${CL_RST}
