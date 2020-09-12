@@ -83,6 +83,12 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
     SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
+# Overlays
+PRODUCT_PACKAGES += \
+    CustomConfigOverlay \
+    CustomLauncherOverlay \
+    CustomSettingsOverlay
+
 # Packages
 include vendor/octavi/config/packages.mk
 
