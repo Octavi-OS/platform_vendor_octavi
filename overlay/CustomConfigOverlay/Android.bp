@@ -14,5 +14,6 @@
 
 runtime_resource_overlay {
     name: "CustomConfigOverlay",
+    product_specific: true,
     sdk_version: "current",
 }
