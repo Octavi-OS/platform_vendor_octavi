@@ -16,7 +16,7 @@ def is_subdir(a, b):
 def get_build_type(target_product):
     build_type = os.environ['BUILD_TYPE'].strip() if 'BUILD_TYPE' in os.environ else ''
     current_device = target_product.split("_")[1]
-    if build_type == 'Official' :
+    if build_type == 'Official' or build_type == 'OFFICIAL' :
         with open("vendor/octavi/octavi.devices", "r") as read_file:
             devices = read_file.read().splitlines()
             if current_device not in devices:
@@ -63,7 +63,7 @@ def main():
     if query == 'buildtype':
         print(get_build_type(target_product))
     elif query == 'version':
-        print("{}-{}-{}-{}.{}".format(data['product'], data['platform'], date, data['status'],
+        print("{}-{}-{}-{}-{}".format(data['product'], data['platform'], date, data['status'],
                                           get_build_type(target_product)))
     else:
         print(data[query] if query in data.keys() else '')
