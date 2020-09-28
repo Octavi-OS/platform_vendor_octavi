@@ -10,7 +10,7 @@ PRODUCT_PACKAGES += \
     GesturalNavigationOverlayMedium \
     GesturalNavigationOverlayHidden
 
-# Extra tools in Octavi
+# Extra tools
 PRODUCT_PACKAGES += \
     7z \
     awk \
@@ -60,8 +60,8 @@ PRODUCT_PACKAGES += \
 # Custom Overlays
 # Settings
 PRODUCT_PACKAGES += \
-    SystemPitchBlackOverlay \
-    SystemUIPitchBlackOverlay \
+    SystemRavenBlackOverlay \
+    SystemUIRavenBlackOverlay \
     SystemDarkGrayOverlay \
     SystemUIDarkGrayOverlay \
     SystemStyleOverlay \
