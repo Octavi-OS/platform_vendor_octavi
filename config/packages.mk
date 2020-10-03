@@ -8,7 +8,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ThemePicker \
     OctaviThemesStub \
-    TurboPrebuilt
+    TurboPrebuilt \
+    PixelThemesStub2019
 
 # Custom Overlays
 # Settings
