@@ -9,7 +9,8 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     OctaviThemesStub \
     TurboPrebuilt \
-    PixelThemesStub2019
+    PixelThemesStub2019 \
+    MatchmakerPrebuilt
 
 # Custom Overlays
 # Settings
