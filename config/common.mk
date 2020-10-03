@@ -111,3 +111,6 @@ include packages/overlays/Themes/themes.mk
 
 # Branding
 include vendor/octavi/config/branding.mk
+
+# Overlays
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/octavi/overlay
