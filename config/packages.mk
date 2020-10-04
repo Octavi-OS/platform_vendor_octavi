@@ -4,6 +4,34 @@ PRODUCT_PACKAGES += \
     wellbeingconf \
     googleconf
 
+# Extra tools in Octavi
+PRODUCT_PACKAGES += \
+    7z \
+    awk \
+    bash \
+    bzip2 \
+    curl \
+    getcap \
+    htop \
+    lib7z \
+    libsepol \
+    nano \
+    pigz \
+    powertop \
+    setcap \
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
+
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.ntfs \
+    mount.ntfs
+
 # Required packages
 PRODUCT_PACKAGES += \
     ThemePicker \
