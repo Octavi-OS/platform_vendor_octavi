@@ -17,7 +17,7 @@ CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 LIST := $(shell cat vendor/octavi/octavi.devices)
 
 ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
-    ifeq ($(filter-out Officla OFFICIAL, $(OCTAVI_BUILD_TYPE)),)
+    ifeq ($(filter-out Official OFFICIAL, $(OCTAVI_BUILD_TYPE)),)
         ifeq ($(OCTAVI_BUILD_TYPE), Official)
           BUILD_TYPE := Official
         endif
