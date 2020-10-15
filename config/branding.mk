@@ -5,6 +5,10 @@ ifndef OCTAVI_BUILD_TYPE
     OCTAVI_BUILD_TYPE := Unofficial
 endif
 
+ifndef OCTAVI_DEVICE_MAINTAINER
+    OCTAVI_DEVICE_MAINTAINER := Nobody
+endif
+
 ifneq ($(SIGNING_KEYS),)
     PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)/releasekey
 endif
@@ -37,4 +41,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.build.project=octavi \
   ro.octavi.version=$(OCTAVI_VERSION) \
   ro.octavi.status=$(OCTAVI_STATUS) \
-  ro.octavi.branding.version=$(OCTAVI_BRANDING_VERSION)
+  ro.octavi.branding.version=$(OCTAVI_BRANDING_VERSION) \
+  ro.octavi.maintainer=$(OCTAVI_DEVICE_MAINTAINER)
