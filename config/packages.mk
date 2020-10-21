@@ -4,6 +4,11 @@ PRODUCT_PACKAGES += \
     wellbeingconf \
     googleconf
 
+# Navbar
+PRODUCT_PACKAGES += \
+    GesturalNavigationOverlayLong \
+    GesturalNavigationOverlayMedium
+
 # Extra tools in Octavi
 PRODUCT_PACKAGES += \
     7z \
