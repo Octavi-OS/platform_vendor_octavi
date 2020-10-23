@@ -24,12 +24,12 @@ type Product_variables struct {
 	Target_process_sdk_version_override struct {
 		Cppflags []string
 	}
-	Device_support_hwfde struct {
+	Supports_hw_fde struct {
 		Cflags []string
 		Header_libs []string
 		Shared_libs []string
 	}
-	Device_support_hwfde_perf struct {
+	Supports_hw_fde_perf struct {
 		Cflags []string
 	}
 	Device_support_legacy_hwfde struct {
@@ -74,9 +74,9 @@ type ProductVariables struct {
 	Additional_gralloc_10_usage_bits  *string `json:",omitempty"`
 	Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
-	Device_support_hwfde  *bool `json:",omitempty"`
-	Device_support_hwfde_perf  *bool `json:",omitempty"`
 	Device_support_legacy_hwfde  *bool `json:",omitempty"`
+        Supports_hw_fde  *bool `json:",omitempty"`
+	Supports_hw_fde_perf  *bool `json:",omitempty"`
 	Should_wait_for_qsee  *bool `json:",omitempty"`
 	Java_Source_Overlays *string `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
