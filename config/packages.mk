@@ -67,4 +67,6 @@ PRODUCT_PACKAGES += \
     SystemStyleOverlay \
     SystemUIStyleOverlay \
     SystemNightOverlay \
-    SystemUINightOverlay
+    SystemUINightOverlay \
+    SystemOctaviClearOverlay \
+    SystemUIOctaviClearOverlay
