@@ -18,6 +18,7 @@ $(call add_json_bool, Supports_extended_compress_format, $(filter true,$(AUDIO_F
 $(call add_json_str_omitempty, Target_init_vendor_lib, $(TARGET_INIT_VENDOR_LIB))
 $(call add_json_str_omitempty, Target_process_sdk_version_override, $(TARGET_PROCESS_SDK_VERSION_OVERRIDE))
 $(call add_json_str, Target_shim_libs, $(TARGET_LD_SHIM_LIBS))
+$(call add_json_str_omitempty, Target_specific_header_path, $(TARGET_SPECIFIC_HEADER_PATH))
 $(call add_json_bool, Target_needs_netd_direct_connect_rule, $(filter true,$(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)))
 $(call add_json_str_omitempty, Target_surfaceflinger_fod_lib, $(TARGET_SURFACEFLINGER_FOD_LIB))
 $(call add_json_bool, Target_uses_prebuilt_dynamic_partitions,   $(filter true,$(TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS)))
