@@ -52,7 +52,6 @@ PRODUCT_PACKAGES += \
     OctaviThemesStub \
     TurboPrebuilt \
     PixelThemesStub2019 \
-    MatchmakerPrebuilt \
     WallpaperPickerGoogle \
     OmniJaws \
     WeatherIcons
