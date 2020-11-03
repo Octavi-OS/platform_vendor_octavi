@@ -53,7 +53,9 @@ PRODUCT_PACKAGES += \
     TurboPrebuilt \
     PixelThemesStub2019 \
     MatchmakerPrebuilt \
-    WallpaperPickerGoogle
+    WallpaperPickerGoogle \
+    OmniJaws \
+    WeatherIcons
 
 # Custom Overlays
 # Settings
