@@ -33,9 +33,17 @@ PRODUCT_PACKAGES += \
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
-    fsck.ntfs \
+    e2fsck \
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
     mke2fs \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
     mkfs.ntfs \
+    fsck.ntfs \
     mount.ntfs
 
 # Required packages
