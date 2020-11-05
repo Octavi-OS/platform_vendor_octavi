@@ -2,105 +2,61 @@
 #
 # Backup and restore addon /system files
 #
+export ADDOND_VERSION=1
 
 export C=/tmp/backupdir
-export SYSDEV="$(readlink -nf "$2")"
-export SYSFS="$3"
-export V=11
+export S=$2
 
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
 
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
-  if [ -d $S/addon.d/ ]; then
-    mkdir -p /tmp/addon.d/
-    cp -a $S/addon.d/* /tmp/addon.d/
-    chmod 755 /tmp/addon.d/*.sh
-  fi
+  mkdir -p /tmp/addon.d/
+  cp -a $S/addon.d/* /tmp/addon.d/
+
+  # Discard any scripts that aren't at least our version level
+  for f in /postinstall/tmp/addon.d/*sh; do
+    SCRIPT_VERSION=$(grep "^# ADDOND_VERSION=" $f | cut -d= -f2)
+    if [ -z "$SCRIPT_VERSION" ]; then
+      SCRIPT_VERSION=1
+    fi
+    if [ $SCRIPT_VERSION -lt $ADDOND_VERSION ]; then
+      rm $f
+    fi
+  done
+
+  chmod 755 /tmp/addon.d/*.sh
 }
 
-# Restore /system/addon.d from /tmp/addon.d
+# Restore /system/addon.d in /tmp/addon.d
 restore_addon_d() {
-  if [ -d /tmp/addon.d/ ]; then
-    mkdir -p $S/addon.d/
-    cp -a /tmp/addon.d/* $S/addon.d/
-    rm -rf /tmp/addon.d/
-  fi
-}
-
-# Proceed only if /system is the expected major and minor version
-check_prereq() {
-# If there is no build.prop file the partition is probably empty.
-if [ ! -r $S/build.prop ]; then
-  echo "Backup/restore is not possible. Partition is probably empty"
-  return 1
-fi
-if ! grep -q "^ro.build.version.release=$V.*" $S/build.prop; then
-  echo "Backup/restore is not possible. Incompatible ROM version: $V"
-  return 2
-fi
-return 0
+  cp -a /tmp/addon.d/* $S/addon.d/
+  rm -rf /tmp/addon.d/
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
 run_stage() {
-if [ -d /tmp/addon.d/ ]; then
-  for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
-    $script $1
-  done
-fi
+for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
+  $script $1
+done
 }
-
-determine_system_mount() {
-  if grep -q -e"^$SYSDEV" /proc/mounts; then
-    umount $(grep -e"^$SYSDEV" /proc/mounts | cut -d" " -f2)
-  fi
-
-  if [ -d /mnt/system ]; then
-    SYSMOUNT="/mnt/system"
-  elif [ -d /system_root ]; then
-    SYSMOUNT="/system_root"
-  else
-    SYSMOUNT="/system"
-  fi
-
-  export S=$SYSMOUNT/system
-}
-
-mount_system() {
-  mount -t $SYSFS $SYSDEV $SYSMOUNT -o rw,discard
-}
-
-unmount_system() {
-  umount $SYSMOUNT
-}
-
-determine_system_mount
 
 case "$1" in
   backup)
-    mount_system
-    if check_prereq; then
-      mkdir -p $C
-      preserve_addon_d
-      run_stage pre-backup
-      run_stage backup
-      run_stage post-backup
-    fi
-    unmount_system
+    mkdir -p $C
+    preserve_addon_d
+    run_stage pre-backup
+    run_stage backup
+    run_stage post-backup
   ;;
   restore)
-    mount_system
-    if check_prereq; then
-      run_stage pre-restore
-      run_stage restore
-      run_stage post-restore
-      restore_addon_d
-      rm -rf $C
-      sync
-    fi
-    unmount_system
+    run_stage pre-restore
+    run_stage restore
+    run_stage post-restore
+    restore_addon_d
+    rm -rf $C
+    sync
   ;;
   *)
     echo "Usage: $0 {backup|restore}"
