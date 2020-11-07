@@ -1,5 +1,5 @@
 OCTAVI_STATUS = 1.2
-OCTAVI_BUILD_DATE ?= $(shell date +%Y%m%d)
+OCTAVI_BUILD_DATE ?= $(shell date  +%Y%m%d-%H%M)
 OCTAVI_BUILDTYPE_VARIANT := VANILLA
 
 ifndef OCTAVI_BUILD_TYPE
