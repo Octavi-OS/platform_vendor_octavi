@@ -1,5 +1,6 @@
-OCTAVI_STATUS = 1.1
+OCTAVI_STATUS = 1.2
 OCTAVI_BUILD_DATE ?= $(shell date +%Y%m%d)
+OCTAVI_BUILDTYPE_VARIANT := VANILLA
 
 ifndef OCTAVI_BUILD_TYPE
     OCTAVI_BUILD_TYPE := Unofficial
@@ -31,9 +32,14 @@ else
     endif
 endif
 
+ifeq ($(WITH_GAPPS), true)
+    $(call inherit-product, vendor/gapps/gapps.mk)
+    OCTAVI_BUILDTYPE_VARIANT := GAPPS
+endif
+
 TARGET_PRODUCT_SHORT := $(subst octavi_,,$(TARGET_PRODUCT))
 
-OCTAVI_VERSION := OctaviOS-v$(OCTAVI_STATUS)-$(TARGET_PRODUCT_SHORT)-$(OCTAVI_BUILD_DATE)-$(OCTAVI_BUILD_TYPE)
+OCTAVI_VERSION := OctaviOS-v$(OCTAVI_STATUS)-$(TARGET_PRODUCT_SHORT)-$(OCTAVI_BUILD_DATE)-$(OCTAVI_BUILDTYPE_VARIANT)-$(OCTAVI_BUILD_TYPE)
 
 OCTAVI_BRANDING_VERSION := $(OCTAVI_BUILD_TYPE)
 
@@ -41,5 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.build.project=octavi \
   ro.octavi.version=$(OCTAVI_VERSION) \
   ro.octavi.status=$(OCTAVI_STATUS) \
+  ro.octavi.buildtypevariant=$(OCTAVI_BUILDTYPE_VARIANT) \
   ro.octavi.branding.version=$(OCTAVI_BRANDING_VERSION) \
   ro.octavi.maintainer=$(OCTAVI_DEVICE_MAINTAINER)

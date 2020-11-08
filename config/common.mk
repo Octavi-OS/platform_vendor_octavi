@@ -12,15 +12,25 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
+    vendor/octavi/prebuilt/common/bin/backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.sh \
+    vendor/octavi/prebuilt/common/bin/backuptool.functions:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.functions \
+    vendor/octavi/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh \
+
+# backuptool
+PRODUCT_COPY_FILES += \
     vendor/octavi/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/octavi/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/octavi/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/octavi/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh
 
-ifeq ($(AB_OTA_UPDATER),true)
+# system mount
 PRODUCT_COPY_FILES += \
-    vendor/octavi/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/octavi/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/octavi/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/octavi/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
+
+ifneq ($(AB_OTA_PARTITIONS),)
+PRODUCT_COPY_FILES += \
+    vendor/octavi/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/octavi/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/octavi/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -71,16 +81,6 @@ endif
 # Disable Rescue Party
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
-
-# exFAT
-WITH_EXFAT ?= true
-ifeq ($(WITH_EXFAT),true)
-TARGET_USES_EXFAT := true
-PRODUCT_PACKAGES += \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat
-endif
 
 # We modify several neverallows, so let the build proceed
 ifneq ($(TARGET_BUILD_VARIANT),user)

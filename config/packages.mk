@@ -4,7 +4,13 @@ PRODUCT_PACKAGES += \
     wellbeingconf \
     googleconf
 
-# Extra tools in Octavi
+# Navbar
+PRODUCT_PACKAGES += \
+    GesturalNavigationOverlayLong \
+    GesturalNavigationOverlayMedium \
+    GesturalNavigationOverlayHidden
+
+# Extra tools
 PRODUCT_PACKAGES += \
     7z \
     awk \
@@ -27,9 +33,17 @@ PRODUCT_PACKAGES += \
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
-    fsck.ntfs \
+    e2fsck \
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
     mke2fs \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
     mkfs.ntfs \
+    fsck.ntfs \
     mount.ntfs
 
 # Required packages
@@ -38,17 +52,20 @@ PRODUCT_PACKAGES += \
     OctaviThemesStub \
     TurboPrebuilt \
     PixelThemesStub2019 \
-    MatchmakerPrebuilt \
-    WallpaperPickerGoogle
+    WallpaperPickerGoogle \
+    OmniJaws \
+    WeatherIcons
 
 # Custom Overlays
 # Settings
 PRODUCT_PACKAGES += \
-    SystemPitchBlackOverlay \
-    SystemUIPitchBlackOverlay \
+    SystemRavenBlackOverlay \
+    SystemUIRavenBlackOverlay \
     SystemDarkGrayOverlay \
     SystemUIDarkGrayOverlay \
     SystemStyleOverlay \
     SystemUIStyleOverlay \
     SystemNightOverlay \
-    SystemUINightOverlay
+    SystemUINightOverlay \
+    SystemOctaviClearOverlay \
+    SystemUIOctaviClearOverlay
