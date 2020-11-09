@@ -122,5 +122,8 @@ $(call inherit-product, vendor/octavi/config/audio.mk)
 # Branding
 include vendor/octavi/config/branding.mk
 
+# Plugins
+include packages/apps/PotatoPlugins/plugins.mk
+
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/octavi/overlay
