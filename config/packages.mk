@@ -54,7 +54,9 @@ PRODUCT_PACKAGES += \
     PixelThemesStub2019 \
     WallpaperPickerGoogle \
     OmniJaws \
-    WeatherIcons
+    WeatherIcons \
+    QuickAccessWallet
+
 
 # Custom Overlays
 # Settings
