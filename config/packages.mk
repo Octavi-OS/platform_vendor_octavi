@@ -56,7 +56,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ThemePicker \
     OctaviThemesStub \
-    TurboPrebuilt \
     PixelThemesStub2019 \
     WallpaperPickerGoogle \
     OmniJaws \

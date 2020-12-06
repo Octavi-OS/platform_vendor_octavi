@@ -12,9 +12,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- Turbo -->
-    <string name="config_batterySaverScheduleProvider">com.google.android.apps.turbo</string>
  
     <!-- The component name, flattened to a string, for the default autofill service
          to  enabled for an user. This service must be trusted, as it can be activated
