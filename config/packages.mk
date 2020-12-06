@@ -60,7 +60,8 @@ PRODUCT_PACKAGES += \
     WallpaperPickerGoogle \
     OmniJaws \
     WeatherIcons \
-    QuickAccessWallet
+    QuickAccessWallet \
+    Flipendo
 
 
 # Custom Overlays
