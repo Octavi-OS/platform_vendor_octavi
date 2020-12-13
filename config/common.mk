@@ -127,3 +127,6 @@ include packages/apps/PotatoPlugins/plugins.mk
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/octavi/overlay
+
+# Device Overlays
+DEVICE_PACKAGE_OVERLAYS += vendor/octavi/overlay/common
