@@ -65,6 +65,7 @@ PRODUCT_PACKAGES += \
     SoundPickerPrebuilt \
     StitchImage \
     StitchImageService \
+    SoftAPManager \
     TeamOctavi \
     TouchGestures \
     Custom-Fonts
