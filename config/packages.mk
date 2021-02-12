@@ -1,7 +1,6 @@
 # Awaken packages
 PRODUCT_PACKAGES += \
     Updater \
-    Terminal \
     ThemePicker
 
 # Extra tools in Awaken
