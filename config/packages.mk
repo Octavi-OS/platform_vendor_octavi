@@ -61,8 +61,9 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     WeatherIcons \
     QuickAccessWallet \
-    Flipendo
-
+    Flipendo \
+    StitchImage \
+    StitchImageService
 
 # Custom Overlays
 # Settings
