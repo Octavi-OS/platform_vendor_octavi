@@ -22,6 +22,10 @@ PRODUCT_COPY_FILES += \
     vendor/octavi/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/octavi/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh
 
+# IORap app launch prefetching using Perfetto traces and madvise
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.iorapd.enable=true
+
 # system mount
 PRODUCT_COPY_FILES += \
     vendor/octavi/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
