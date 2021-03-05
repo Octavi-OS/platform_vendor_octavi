@@ -63,7 +63,8 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet \
     Flipendo \
     StitchImage \
-    StitchImageService
+    StitchImageService \
+    TeamOctavi
 
 # Custom Overlays
 # Settings
