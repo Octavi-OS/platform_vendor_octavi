@@ -64,7 +64,8 @@ PRODUCT_PACKAGES += \
     Flipendo \
     StitchImage \
     StitchImageService \
-    TeamOctavi
+    TeamOctavi \
+    TouchGestures
 
 # Custom Overlays
 # Settings
