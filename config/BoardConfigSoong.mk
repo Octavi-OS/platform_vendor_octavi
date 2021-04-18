@@ -41,6 +41,7 @@ SOONG_CONFIG_octaviGlobalVars += \
     ignores_ftp_pptp_conntrack_failure \
     needs_netd_direct_connect_rule \
     target_surfaceflinger_fod_lib \
+    target_uses_prebuilt_dynamic_partitions \
     uses_camera_parameter_lib
 
 SOONG_CONFIG_NAMESPACES += octaviQcomVars
@@ -63,6 +64,7 @@ endif
 SOONG_CONFIG_octaviGlobalVars_has_legacy_camera_hal1 := $(TARGET_HAS_LEGACY_CAMERA_HAL1)
 SOONG_CONFIG_octaviGlobalVars_ignores_ftp_pptp_conntrack_failure := $(TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE)
 SOONG_CONFIG_octaviGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
+SOONG_CONFIG_octaviGlobalVars_target_uses_prebuilt_dynamic_partitions := $(TARGET_USES_PREBUILT_DYNAMIC_PARTITIONS)
 SOONG_CONFIG_octaviQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 SOONG_CONFIG_octaviQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_octaviQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
