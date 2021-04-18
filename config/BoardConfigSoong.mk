@@ -29,3 +29,60 @@ define addVar
 endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
+
+SOONG_CONFIG_NAMESPACES += octaviGlobalVars
+SOONG_CONFIG_octaviGlobalVars += \
+    additional_gralloc_10_usage_bits \
+    bootloader_message_offset \
+    has_legacy_camera_hal1 \
+    target_init_vendor_lib \
+    target_process_sdk_version_override \
+    target_ld_shim_libs \
+    ignores_ftp_pptp_conntrack_failure \
+    needs_netd_direct_connect_rule \
+    target_surfaceflinger_fod_lib \
+    uses_camera_parameter_lib
+
+SOONG_CONFIG_NAMESPACES += octaviQcomVars
+SOONG_CONFIG_octaviQcomVars += \
+    should_wait_for_qsee \
+    supports_extended_compress_format \
+    supports_hw_fde \
+    supports_hw_fde_perf \
+    uses_qcom_bsp_legacy \
+    uses_qti_camera_device
+
+# Only create soong_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_octaviQcomVars += \
+    qcom_soong_namespace
+endif
+
+# Soong bool variables
+SOONG_CONFIG_octaviGlobalVars_has_legacy_camera_hal1 := $(TARGET_HAS_LEGACY_CAMERA_HAL1)
+SOONG_CONFIG_octaviGlobalVars_ignores_ftp_pptp_conntrack_failure := $(TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE)
+SOONG_CONFIG_octaviGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
+SOONG_CONFIG_octaviQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
+SOONG_CONFIG_octaviQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
+SOONG_CONFIG_octaviQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
+SOONG_CONFIG_octaviQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
+SOONG_CONFIG_octaviQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGACY)
+SOONG_CONFIG_octaviQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
+
+# Set default values
+BOOTLOADER_MESSAGE_OFFSET ?= 0
+TARGET_INIT_VENDOR_LIB ?= vendor_init
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY ?= libcamera_parameters
+TARGET_SURFACEFLINGER_FOD_LIB ?= surfaceflinger_fod_lib
+
+# Soong value variables
+SOONG_CONFIG_octaviGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
+SOONG_CONFIG_octaviGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
+SOONG_CONFIG_octaviGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
+SOONG_CONFIG_octaviGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
+SOONG_CONFIG_octaviGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
+SOONG_CONFIG_octaviGlobalVars_target_surfaceflinger_fod_lib := $(TARGET_SURFACEFLINGER_FOD_LIB)
+SOONG_CONFIG_octaviGlobalVars_uses_camera_parameter_lib := $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY)
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_octaviQcomVars_qcom_soong_namespace := $(QCOM_SOONG_NAMESPACE)
+endif
