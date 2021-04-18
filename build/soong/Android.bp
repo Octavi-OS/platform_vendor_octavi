@@ -1,13 +1,4 @@
 bootstrap_go_package {
-    name: "soong-octavi",
-    pkgPath: "octavi/soong/android",
-    srcs: [
-        "android/config.go",
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-octavi-generator",
     pkgPath: "octavi/soong/generator",
     deps: [
