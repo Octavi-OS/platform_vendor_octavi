@@ -30,6 +30,10 @@ endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
+ifneq ($(TARGET_USE_QTI_BT_STACK),true)
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
+endif #TARGET_USE_QTI_BT_STACK
+
 SOONG_CONFIG_NAMESPACES += octaviGlobalVars
 SOONG_CONFIG_octaviGlobalVars += \
     additional_gralloc_10_usage_bits \
