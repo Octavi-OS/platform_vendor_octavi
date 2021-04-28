@@ -16,13 +16,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     StrokeSignalOverlay \
     SneakySignalOverlay \
-    XperiaSignalOverlay
+    XperiaSignalOverlay \
+    ZigZagSignalOverlay \
+    WavySignalOverlay \
+    RoundSignalOverlay \
+    InsideSignalOverlay \
+    BarsSignalOverlay
 
 # Wi-Fi Icons
 PRODUCT_PACKAGES += \
     StrokeWiFiOverlay \
     SneakyWiFiOverlay \
-    XperiaWiFiOverlay
+    XperiaWiFiOverlay \
+    ZigZagWiFiOverlay \
+    WavyWiFiOverlay \
+    RoundWiFiOverlay \
+    InsideWiFiOverlay \
+    BarsWiFiOverlay
 
 # Extra tools in Awaken
 PRODUCT_PACKAGES += \
