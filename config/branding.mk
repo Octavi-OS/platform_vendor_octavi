@@ -1,6 +1,7 @@
 OCTAVI_STATUS = 2.4
 OCTAVI_BUILD_DATE ?= $(shell date  +%Y%m%d-%H%M)
 OCTAVI_BUILDTYPE_VARIANT := VANILLA
+OCTAVI_MAINTAINER ?= UNKNOWN
 
 ifndef OCTAVI_BUILD_TYPE
     OCTAVI_BUILD_TYPE := Unofficial
@@ -49,4 +50,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
   ro.octavi.status=$(OCTAVI_STATUS) \
   ro.octavi.buildtypevariant=$(OCTAVI_BUILDTYPE_VARIANT) \
   ro.octavi.branding.version=$(OCTAVI_BRANDING_VERSION) \
-  ro.octavi.maintainer=$(OCTAVI_DEVICE_MAINTAINER)
+  ro.octavi.maintainer=$(OCTAVI_DEVICE_MAINTAINER) \
+  ro.maintainer.name=$(OCTAVI_MAINTAINER)
