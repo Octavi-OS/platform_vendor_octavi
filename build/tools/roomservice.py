@@ -49,7 +49,7 @@ custom_local_manifest = ".repo/local_manifests/octavi_manifest.xml"
 custom_default_revision = "11"
 custom_dependencies = "octavi.dependencies"
 org_manifest = "devices"  # leave empty if org is provided in manifest
-org_display = "Octavi-Devices"  # needed for displaying
+org_display = "OctaviOS-Devices"  # needed for displaying
 
 github_auth = None
 
