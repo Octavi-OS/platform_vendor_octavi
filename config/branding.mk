@@ -34,7 +34,7 @@ else
 endif
 
 ifeq ($(WITH_GAPPS), true)
-    $(call inherit-product,  vendor/google/gms/config.mk)
+    $(call inherit-product, vendor/gapps/gapps.mk)
     OCTAVI_BUILDTYPE_VARIANT := GAPPS
 endif
 
