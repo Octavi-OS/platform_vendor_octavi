@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += \
     WeatherIcons \
     QuickAccessWallet \
     Flipendo \
+    SoundPickerPrebuilt \
     StitchImage \
     StitchImageService \
     TeamOctavi \
