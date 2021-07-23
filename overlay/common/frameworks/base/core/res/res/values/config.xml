@@ -69,4 +69,9 @@
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
 
+    <!-- System font packages (overlay in vendor) -->
+    <string-array name="config_fontPackages" translatable="false">
+        <item>com.custom.fonts</item>
+    </string-array>
+
 </resources>

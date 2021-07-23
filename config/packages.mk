@@ -66,7 +66,8 @@ PRODUCT_PACKAGES += \
     StitchImage \
     StitchImageService \
     TeamOctavi \
-    TouchGestures
+    TouchGestures \
+    Custom-Fonts
 
 # Custom Overlays
 # Settings
