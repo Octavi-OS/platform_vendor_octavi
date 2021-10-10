@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # OCTAVI OTA update package
 
-OCTAVI_TARGET_PACKAGE := $(PRODUCT_OUT)/Octavi-$(OCTAVI_VERSION).zip
+OCTAVI_TARGET_PACKAGE := $(PRODUCT_OUT)/OctaviOS-v$(OCTAVI_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 

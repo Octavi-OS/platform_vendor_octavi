@@ -15,7 +15,6 @@
 # limitations under the License.
 
 # Versioning System
-OCTAVI_CODENAME := 
 OCTAVI_NUM_VER := 3.0
 
 TARGET_PRODUCT_SHORT := $(subst octavi_,,$(OCTAVI_BUILD_TYPE))
@@ -36,7 +35,7 @@ endif
 # Set all versions
 BUILD_DATE := $(shell date -u +%Y%m%d)
 BUILD_TIME := $(shell date -u +%H%M)
-OCTAVI_BUILD_VERSION := $(OCTAVI_NUM_VER)-$(OCTAVI_CODENAME)
+OCTAVI_BUILD_VERSION := $(OCTAVI_NUM_VER)
 OCTAVI_VERSION := $(OCTAVI_BUILD_VERSION)-$(OCTAVI_BUILD_TYPE)-$(OCTAVI_BUILD)-$(BUILD_DATE)
 ifeq ($(WITH_GAPPS), true)
 OCTAVI_VERSION := $(OCTAVI_VERSION)-gapps
