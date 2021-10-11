@@ -82,11 +82,6 @@ include vendor/octavi/config/octavi_audio.mk
 # Include extra packages
 include vendor/octavi/config/packages.mk
 
-# TWRP
-ifeq ($(WITH_TWRP),true)
-include vendor/octavi/config/twrp.mk
-endif
-
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
