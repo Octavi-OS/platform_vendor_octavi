@@ -69,8 +69,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
 # Gapps
-ifeq ($(USE_GAPPS),true)
-$(call inherit-product, vendor/gapps/gapps.mk)
+ifeq ($(WITH_GAPPS),true)
+$(call inherit-product, vendor/google/gms/gms.mk)
 endif
 
 # Include AOSP audio files
