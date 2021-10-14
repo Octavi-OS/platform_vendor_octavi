@@ -1,5 +1,5 @@
 # Gapps
-ifeq ($(USE_GAPPS),true)
+ifeq ($(WITH_GAPPS),true)
 $(call inherit-product, vendor/gms/gms_full.mk)
 
 # Common Overlay
