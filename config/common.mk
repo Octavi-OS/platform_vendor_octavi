@@ -73,7 +73,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
 # Gapps
-$(call inherit-product, vendor/octavi/config/gapps.mk)
+ifeq ($(WITH_GAPPS),true)
+$(call inherit-product, vendor/gms/products/gms.mk)
+endif
 
 # Include AOSP audio files
 include vendor/octavi/config/aosp_audio.mk
