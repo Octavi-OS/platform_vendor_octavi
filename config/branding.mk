@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # Versioning System
-OCTAVI_NUM_VER := 3.0
+OCTAVI_NUM_VER := 3.1
 
 TARGET_PRODUCT_SHORT := $(subst octavi_,,$(OCTAVI_BUILD_TYPE))
 
