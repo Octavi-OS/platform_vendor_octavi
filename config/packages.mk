@@ -1,4 +1,9 @@
-# Awaken packages
+TARGET_BUILD_LAWNCHAIR ?= true
+ifeq ($(strip $(TARGET_BUILD_LAWNCHAIR)),true)
+include vendor/lawnchair/lawnchair.mk
+endif
+
+# Octavi packages
 PRODUCT_PACKAGES += \
     Updater \
     ThemePicker
