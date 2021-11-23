@@ -1,4 +1,4 @@
 # Inherit mini common Lineage stuff
-$(call inherit-product, vendor/octavi/config/common_mobile.mk)
+$(call inherit-product, vendor/xandar/config/common_mobile.mk)
 
 PRODUCT_SIZE := mini

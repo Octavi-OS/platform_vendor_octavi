@@ -3,7 +3,7 @@ ifeq ($(strip $(TARGET_BUILD_LAWNCHAIR)),true)
 include vendor/lawnchair/lawnchair.mk
 endif
 
-# Octavi packages
+# Xandar packages
 PRODUCT_PACKAGES += \
     Updater \
     ThemePicker

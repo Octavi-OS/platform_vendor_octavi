@@ -1,8 +1,8 @@
 # Inherit common Lineage stuff
-$(call inherit-product, vendor/octavi/config/common.mk)
+$(call inherit-product, vendor/xandar/config/common.mk)
 
 # Inherit Lineage atv device tree
-$(call inherit-product, device/octavi/atv/lineage_atv.mk)
+$(call inherit-product, device/xandar/atv/lineage_atv.mk)
 
 # AOSP packages
 PRODUCT_PACKAGES += \
@@ -12,4 +12,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageCustomizer
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/octavi/overlay/tv
+PRODUCT_PACKAGE_OVERLAYS += vendor/xandar/overlay/tv

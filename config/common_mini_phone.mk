@@ -1,8 +1,8 @@
 # Inherit mini common Lineage stuff
-$(call inherit-product, vendor/octavi/config/common_mini.mk)
+$(call inherit-product, vendor/xandar/config/common_mini.mk)
 
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME
 
-$(call inherit-product, vendor/octavi/config/telephony.mk)
+$(call inherit-product, vendor/xandar/config/telephony.mk)
