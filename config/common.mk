@@ -112,8 +112,10 @@ PRODUCT_COPY_FILES += \
     vendor/octavi/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 
 # Charger
+ifeq ($(USE_PIXEL_CHARGER),true)
 PRODUCT_PACKAGES += \
     product_charger_res_images
+endif
 
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
