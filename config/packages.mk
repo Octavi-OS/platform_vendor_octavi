@@ -3,6 +3,10 @@ ifeq ($(strip $(TARGET_BUILD_LAWNCHAIR)),true)
 include vendor/lawnchair/lawnchair.mk
 endif
 
+# RRO Overlays
+PRODUCT_PACKAGES += \
+    NavigationBarModeGesturalOverlayFS
+
 # Octavi packages
 PRODUCT_PACKAGES += \
     Updater \
