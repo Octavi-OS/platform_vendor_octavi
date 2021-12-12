@@ -56,6 +56,10 @@ include vendor/octavi/config/branding.mk
 $(foreach f,$(wildcard vendor/octavi/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
+# Copy all app permissions xml
+$(foreach f,$(wildcard vendor/octavi/prebuilt/common/system_ext/etc/permissions/*.xml),\
+        $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/$(notdir $f)))
+
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/octavi/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
