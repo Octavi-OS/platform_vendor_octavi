@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
 
 # Octavi packages
 PRODUCT_PACKAGES += \
+    ota \
     Updater \
     ThemePicker
 
