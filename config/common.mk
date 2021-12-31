@@ -80,6 +80,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
+# Game Overlay
+PRODUCT_COPY_FILES += \
+    vendor/octavi/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+
 # Gapps
 ifeq ($(WITH_GAPPS),true)
 $(call inherit-product, vendor/gms/products/gms.mk)
