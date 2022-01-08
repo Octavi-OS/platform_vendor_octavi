@@ -148,3 +148,7 @@ ifeq ($(EXTRA_UDFPS_ANIMATIONS),true)
 PRODUCT_PACKAGES += \
     UdfpsResources
 endif
+
+# Themes
+$(call inherit-product, vendor/octavi/config/themes.mk)
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
